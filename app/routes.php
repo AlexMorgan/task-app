@@ -15,5 +15,9 @@
 //http://yoursite.com/tasks
 Route::get('tasks', 'TasksController@Index');
 
+//We create wildcard to access any particular id that we want to by using curly braces 
+//We pass a rule to ensure that the url only shows digits of id's that exist, "where id is one or more digits"
+Route::get('tasks/{id}', 'TasksController@show')->where('id', '\d+');
+
 //John's tasks
 //http://yoursite.com/tasks
