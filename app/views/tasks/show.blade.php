@@ -9,6 +9,6 @@
 	<article> {{ $task->body }} </article>
 
 	<!-- first parameter is the url, second parameter is the dialog -->
-	<p> {{ link_to('/tasks', 'Go back') }} </p>
+	<p> {{ link_to('/', 'Go back') }} </p>
 
 @stop

@@ -51,6 +51,14 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+//When this exception is thrown, we will execute this particular code
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception)
+{
+	//The contents of this closure will only execute if a model not found exception is thrown - it will redirect us to the home page.
+	// return Redirect::to('/');
+	return Redirect::home();
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

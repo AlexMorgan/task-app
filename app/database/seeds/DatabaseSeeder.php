@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		//Now when we call an artisan command DB:seed its going to look for all seeders that we referenced in this master file and trigger them
+		$this->call('UsersTableSeeder');
 	}
 
 }

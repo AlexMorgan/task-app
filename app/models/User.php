@@ -49,4 +49,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	//We're adding a mutator to our User.php model - we spcify that before a field is saved we will Hash it
+	//the convention is the same for any field attribute. ex: setUsernameAttribute
+	public function setPasswordAttribute($value)
+	{
+		//this will update all attributes 
+		$this->attributes['password'] = Hash::make($value);
+	}
+
+	public function tasks()
+	{
+		//we must use the class name that we specified in the other model
+		return $this->hasMany('Task');
+
+	}
+
 }
